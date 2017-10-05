@@ -1,0 +1,19 @@
+Kristine Trinh
+nlt895 
+11190412 
+
+1.
+    Filename                Avg. Queries for hashQuestLog           Avg. Queries for treeQuestLog
+    quests4.csv                         1.25                                    2.0
+    quests16.csv                        1.125                                   4.0
+    quests250.csv                       1.232                                   13.34 
+    quests1000.csv                      2.148                                   18.08
+    quests100000.csv                    1.45367                                 30.8778
+
+2. O(1)
+
+3. O(logn)
+
+4. Tree-based quest log because it's better for retrieving the data in alphabetical order
+
+5. Hash table quest log because it's better for random assessment on data 
