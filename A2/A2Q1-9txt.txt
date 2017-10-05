@@ -1,0 +1,155 @@
+Kristine Trinh
+nlt895	
+11190412
+Assignment 2 
+
+Question 1)
+
+(a) The true statement is O(n^3)
+
+(b) BigTheta(n^3)
+
+Question 2)
+
+(a) The tightest upper bound is O(2^n)
+
+(b) The tightest upper bound is O(n^3)
+
+(c) The tightest upper bound is O(n^0.5)
+
+Question 3)
+
+(a) O(n^2) 
+
+(b) O(2^n * n^2)
+
+(c) O(n^3)
+
+(d) O(n^2 log n^2 + m)
+
+Question 4)
+
+Given f(n) = 2n^3 + 5n^2 + 42
+
+We want to prove that there are numbers c and n0 such that 2n^3 + 5n^2 + 42 <= c(n^3) 
+for all n >= n0
+
+If 2n^3 + 5n^2 + 42 <= c(n^3) then 2 + 5n^2/n^3 + 42/n^3 <= c
+Therefore, the Big-Oh condition holds for n >= n0 = 2
+
+It is obvious that 
+
+n^2 <= n^3 
+5n^2 <= 5n^3
+5n^2 + 2n^3 <= 5n^3 + 2n^3
+5n^2 + 2n^3 + 42 <= 5n^3 + 2n^3 + 42n^3
+5n^2 + 2n^3 + 42 <= 49n^3 for all n >= 2
+
+Therefore 2n^3 + 5n^2 + 42 = O(n^3) [ c = 49 and n0 = 2 ]
+		  
+Question 5)
+
+Given g(n) = 12(n^2 log n^2) + 6n + 42
+
+We want to prove that there are numbers c and n0 such that 12(n^2 log n^2) + 6n + 42 <= c(n^2 log n^2)
+for all n >= n0
+
+If 12(n^2 log n^2) + 6n + 42 <= c(n^2 log n^2) then 2 + n/(n^2 log n^2) + 7/(n^2 log n^2) <= c
+Therefore, this Big-Oh condition holds for n >= n0 = 2
+
+It is obvious that 
+
+n <= n^2 log n^2
+6n <= 6(n^2 log n^2)
+6n + 12(n^2 log n^2) <= 6(n^2 log n^2) + 12(n^2 log n^2)
+6n + 12(n^2 log n^2) + 42 <= 6(n^2 log n^2) + 12(n^2 log n^2) + 42(n^2 log n^2)
+6n + 12(n^2 log n^2) + 42 <= 60(n^2 log n^2)
+
+Therefore 12(n^2 log n^2) + 6n + 42 <= O(n^2 log n^2)) [ c = 60 and n0 = 2 ]
+
+Question 6)
+
+Given g(n) = 12(n^2 log n^2) + 6n + 42
+
+We want to prove that 12(n^2 log n^2) + 6n + 42 is not in O(n)
+
+If 12(n^2 log n^2) + 6n + 42 <= c(n) then  2(n^2 log n^2)/n + 1 + 42/n <= c
+
+Therefore, the Big-Oh condition cannot hold (the left side of the latter inequality is growing infinitely, 
+so that there is no such constant factor c) and 12(n^2 log n^2) + 6n + 42 is not in O(n)
+
+Question 7)
+
+(a) The inner loop iteration executes 1 statement and starts from 1 until j is equal or less than 
+	n. Hence, the loop will execute n times, and execute 1 statement each time for the total of 1n 
+	statements. The outer loop will also start from 1 to i is equal or less than n. Therefore, the
+	statement count is n^2 times 
+	
+(b) BigTheta(n^2)
+
+Question 8)
+
+(a)
+
+n = a.length // 1 statement at each time 
+
+for i = 0 to n-1 // 1 statement for n times 
+	
+	for j = i + 1 to n-1 // 1 statement for n times
+		
+			print a[i] + " duels " + a[j] + ", "Yarrr!" // 1 statement at each time
+			
+Therefore, the function f(n) = n(n-1)/2
+
+(b)
+
+f(n) = n(n-1)/2
+f(n) = (n^2 - n)/2
+Therefore, the notation of f(n) is BigTheta(n^2)
+
+Question 9)
+
+(a) In the worst case, the condition for the while loop is always true. Considering the following 
+counting:
+
+int i = 1 // 1 statement at each time
+n = a.length // 1 statement at each time 
+while (a[i] > a[2*i] || a[i] > a[2*i+1]) && 2*i+1 < n) // 5 statements at each time  
+	if a[2*i] >= a[2*i +1] // 1 statement at each time
+		largest = 2*i		// 1 statement at each time 
+	else
+		largest = 2*i + 1
+temp = a[i] // 1 statement at each time
+a[i] = a[largest] // 1 statement at each time
+a[largest] = temp // 1 statement at each time 
+i = largest // 1 statement at each time 
+
+Therefore, in the worst case, there will be 11 statements (11n) are executed by one iteration of the loop
+
+(b)
+
+The exact number of times the while loop executes in the worst case is log2n times since the 
+while loop starts executing from 0 to 2*i > n, if k is the number of times the loop will execute then 2^k = n; hence k = log2n 
+
+(c)
+
+Before the while loop even starts, the program have 2 initial statements and after executing 
+while loop in the worst case we have another 11 statements. Therefore, the number of statements 
+executed in the worst case by the whole algorithm is (11)(log2n) + 2
+
+(d)
+
+The active operation is while(a[i] > a[2*i] || a[i] > a[2*i+1]) && 2*i+1 < n)
+
+(e)
+
+The exact number of times the active operation is executed is (11)log(2n)
+
+(f)
+
+Big-Oh notation for part c) is O(log2n)
+Big-Oh notation for part e) is O(log2n)
+
+
+
+
